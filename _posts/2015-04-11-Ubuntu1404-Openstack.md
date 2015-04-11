@@ -33,3 +33,11 @@ title: Ubuntu14.04でOpenstack
  * いちおう念のためapt-get update && apt-get upgradeはかけてみたが状況変わらず（パッケージの入れ替わりなし）。
  * というか直った扱いになってるのはvividであって、trusty(14.04)じゃないので当たり前といえば当たり前だが。
  * 直ってるとされるlibvirt-1.2.12を野良ビルドしようかとも考えたが、影響範囲が予想つかなすぎて見送り。たった2ページ分しか進まないとかハードル高すぎだろう。
+ * と思っていたのだが、犯人は実は別にいた。
+ * 犯人はapparmor、お前だ。SELinuxまでは想像できてもお前は想像できなかったよ。
+ * /etc/default/grubに以下を設定。  
+   GRUB_CMDLINE_LINUX="apparmor=0"  
+ * その上で反映。  
+   # update-grub  
+   # reboot  
+ * これでとりあえず仮想マシンの起動そのものはできるようになった。が、Ubuntuをインストールする際にUbuntu archive errorが出てしまいまだ止まっているのだった。

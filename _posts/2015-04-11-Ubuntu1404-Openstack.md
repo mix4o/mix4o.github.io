@@ -41,3 +41,5 @@ title: Ubuntu14.04でOpenstack
    # update-grub  
    # reboot  
  * これでとりあえず仮想マシンの起動そのものはできるようになった。が、Ubuntuをインストールする際にUbuntu archive errorが出てしまいまだ止まっているのだった。
+ * どうも内部的にはDHCPでIPアドレスをとっているようだが、その際に渡されたDNSサーバのアドレスのIPのサーバが名前解決をしてくれないようだ。shellに落ちて確認した。
+ * 仕方ないのでshellに落ちた状態でecho "nameserver 8.8.8.8" >>/etc/resolv.confを実行してネームサーバを追加。これでUbuntuのインストールは始まったのだが、なんかいろいろはまりすぎだろう。

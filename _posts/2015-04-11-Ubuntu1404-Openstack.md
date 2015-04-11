@@ -4,18 +4,18 @@ title: Ubuntu14.04でOpenstack
 ---
  * OpenStack本にしたがってやったらあっさりハマる。まぁ本の名誉のためにいっておくと直接は本のせいじゃない（が、本書いた2015/01に本当に通ったのかは少し疑念は残る）
  * P79にあるようにubuntu-virtinst.gitをもってくる（成功）。  
- git clone https://github.com/josug-book1-materials/ubuntu-virtinst.git  
+ # git clone https://github.com/josug-book1-materials/ubuntu-virtinst.git  
  * openstack用のネットワークを構築する（成功）。  
-  <network>  
-    <name>openstack</name>  
-    <forward mode='nat'/>  
-    <bridge name='opnestack' stp='off' delay='0'/>  
-    <ip address='192.168.100.1' netmask='255.255.255.0'>  
-      <dhcp>  
-        <range start='192.168.100.200' end='192.168.100.254' />  
-      </dhcp>  
-    </ip>  
-  </network>  
+ > <network>  
+ >   <name>openstack</name>  
+ >   <forward mode='nat'/>  
+ >   <bridge name='opnestack' stp='off' delay='0'/>  
+ >   <ip address='192.168.100.1' netmask='255.255.255.0'>  
+ >     <dhcp>  
+ >       <range start='192.168.100.200' end='192.168.100.254' />  
+ >     </dhcp>  
+ >   </ip>  
+ > </network>  
  
   # virsh net-define openstack.xml  
   # virsh net-start openstack  

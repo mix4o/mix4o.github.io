@@ -54,4 +54,4 @@ title: Ubuntu14.04でOpenstack
 ```
 
 * これでまずインストールで止まるということはなくなる、はず。
-* 
+* 次にやるべきことは同じOSをインストールするのに別々にネットワークに見に行くのは無駄が多いのでProxyを通す。ただし、virsh-installで自動化させたいので手動でProxyを設定するのはNG。ということでtransparent proxy。

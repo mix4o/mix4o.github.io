@@ -31,7 +31,7 @@ title: Ubuntu14.04でOpenstack
  * ぐぐると[libvirt does not grant qemu-guest-agent channel perms](https://bugs.launchpad.net/ubuntu/+source/libvirt/+bug/1393842)が出てくる。初出2014/11。
  * 内容はlibvirtのバグのようなのだが、直ったのが2015/04/09!（一昨日）どう見ても本出た後だ。
  * いちおう念のためapt-get update && apt-get upgradeはかけてみたが状況変わらず（パッケージの入れ替わりなし）。
- * というか直った扱いになってるのはvividであって、trusty(14.04)じゃないので当たり前といえば当たり前だが。
+ * というか直った扱いになってるのはvividであって、trusty(14.04)じゃないので当たり前といえば当たり前だが。  
  * 直ってるとされるlibvirt-1.2.12を野良ビルドしようかとも考えたが、影響範囲が予想つかなすぎて見送り。たった2ページ分しか進まないとかハードル高すぎだろう。
  * と思っていたのだが、犯人は実は別にいた。
  * 犯人はapparmor、お前だ。SELinuxまでは想像できてもお前は想像できなかったよ。

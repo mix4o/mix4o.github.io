@@ -21,13 +21,13 @@ title: Ubuntu14.04でOpenstack
   
   socket,id=charmonitor,path=/var/lib/libvirt/qemu/stack01.monitor,server,nowait: Failed to bind socket: Permission denied
   qemu-system-x86_64: -chardev socket,id=charmonitor,path=/var/lib/libvirt/qemu/stack01.monitor,server,nowait: chardev: opening backend 
-  
-  "socket" failed
-  
-  Domain installation does not appear to have been successful.
-  If it was, you can restart your domain by running:
-    virsh --connect qemu:///system start stack01
-  otherwise, please restart your installation.
+    
+  "socket" failed  
+    
+  Domain installation does not appear to have been successful.  
+  If it was, you can restart your domain by running:  
+    virsh --connect qemu:///system start stack01  
+  otherwise, please restart your installation.  
  * ぐぐると[libvirt does not grant qemu-guest-agent channel perms](https://bugs.launchpad.net/ubuntu/+source/libvirt/+bug/1393842)が出てくる。初出2014/11。
  * 内容はlibvirtのバグのようなのだが、直ったのが2015/04/09!（一昨日）どう見ても本出た後だ。
  * いちおう念のためapt-get update && apt-get upgradeはかけてみたが状況変わらず（パッケージの入れ替わりなし）。

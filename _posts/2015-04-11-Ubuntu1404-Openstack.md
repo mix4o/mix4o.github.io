@@ -2,7 +2,7 @@
 layout: post
 title: Ubuntu14.04でOpenstack
 ---
- * OpenStack本にしたがってやったらあっさりハマる。まぁ本の名誉のためにいっておくと直接は本のせいじゃない（が、本書いた2015/01に本当に通ったのかは少し疑念は残る）
+ * OpenStack本にしたがってやったらあっさりハマる。まぁ本の名誉のためにいっておくと直接は本のせいじゃない。
  * P79にあるようにubuntu-virtinst.gitをもってくる（成功）。  
  # git clone https://github.com/josug-book1-materials/ubuntu-virtinst.git  
  * openstack用のネットワークを構築する（成功）。  
@@ -43,3 +43,6 @@ title: Ubuntu14.04でOpenstack
  * これでとりあえず仮想マシンの起動そのものはできるようになった。が、Ubuntuをインストールする際にUbuntu archive errorが出てしまいまだ止まっているのだった。
  * どうも内部的にはDHCPでIPアドレスをとっているようだが、その際に渡されたDNSサーバのアドレスのIPのサーバが名前解決をしてくれないようだ。shellに落ちて確認した。
  * 仕方ないのでshellに落ちた状態でecho "nameserver 8.8.8.8" >>/etc/resolv.confを実行してネームサーバを追加。これでUbuntuのインストールは始まったのだが、なんかいろいろはまりすぎだろう。
+ * とりあえずインストールは完了したが、これを2台以降もやる気はしないので、ネットワークの設定を修正する。具体的には
+  <dns>  
+  </dns>  

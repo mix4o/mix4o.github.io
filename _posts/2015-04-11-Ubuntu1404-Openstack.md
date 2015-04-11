@@ -44,6 +44,7 @@ title: Ubuntu14.04でOpenstack
  * どうも内部的にはDHCPでIPアドレスをとっているようだが、その際に渡されたDNSサーバのアドレスのIPのサーバが名前解決をしてくれないようだ。shellに落ちて確認した。
  * 仕方ないのでshellに落ちた状態でecho "nameserver 8.8.8.8" >>/etc/resolv.confを実行してネームサーバを追加。これでUbuntuのインストールは始まったのだが、なんかいろいろはまりすぎだろう。
  * とりあえずインストールは完了したが、これを2台以降もやる気はしないので、ネットワークの設定を修正する。
+
  ```
   <dns>  
      <txt name="example" value="example">  
@@ -51,3 +52,5 @@ title: Ubuntu14.04でOpenstack
      <forwarder addr="8.8.4.4"/>  
   </dns>   
 ```
+
+ *

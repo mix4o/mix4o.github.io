@@ -55,3 +55,25 @@ title: Ubuntu14.04でOpenstack
 
 * これでまずインストールで止まるということはなくなる、はず。
 * 次にやるべきことは同じOSをインストールするのに別々にネットワークに見に行くのは無駄が多いのでProxyを通す。ただし、virsh-installで自動化させたいので手動でProxyを設定するのはNG。ということでtransparent proxy。
+* まずsquidの設定。
+
+```
+http_port 8080 
+http_port 3128 transparent
+
+acl open
+delay_pools 1
+delay_calss 1 1
+delay_access 1 allow openstack
+delay_parameters 300000/300000 # 100kB/s
+```
+
+ * 家で通常のプロキシを設定しているPCもあるので、無条件にtransparentにはしない（あちこち直して回るのがめんどい）。3128を別途transparent用のポートとして設定する。ついでに帯域制限もかけた。今のところopenstackの環境にネットワーク処理速度を要求することはないし、自分が本筋でやりたいことを邪魔されたくないので。
+ * 次にiptablesの設定。
+
+```
+iptables -t nat -A PREROUTING -s 192.168.100.0/24 -p tcp --dport 80 -j REDIRECT --to-port 3128
+iptables -t nat -A PREROUTING -s 192.168.100.0/24 -p tcp --dport 443 -j REDIRECT --to-port 3128
+```
+
+ * 443(HTTPS)についてはプロキシを通したからといってキャッシュ効率がよくなるわけではないが、帯域制限の管理下にいれるために設定。

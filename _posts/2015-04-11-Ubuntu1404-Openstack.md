@@ -61,7 +61,7 @@ title: Ubuntu14.04でOpenstack
 http_port 8080 
 http_port 3128 transparent
 
-acl open
+acl openstack src 192.168.100.0/24
 delay_pools 1
 delay_calss 1 1
 delay_access 1 allow openstack

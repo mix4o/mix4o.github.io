@@ -5,7 +5,7 @@ title: Ubuntu14.04でOpenstack
  * OpenStack本にしたがってやったらあっさりハマる。まぁ本の名誉のためにいっておくと直接は本のせいじゃない（が、本書いた2015/01に本当に通ったのかは少し疑念は残る）
  * P79にあるようにubuntu-virtinst.gitをもってくる（成功）。
  * openstack用のネットワークを構築する（成功）。
- * コントローラ用のノードを作るためのスクリプトをubuntu-virtinstall.gitからもってきたvirtinst-stack01.shを実行する。すると以下のように出てエラーになる。
+ * コントローラ用のノードを作るためのスクリプトをubuntu-virtinstall.gitからもってきたvirtinst-stack01.shを実行する。すると以下のように出てエラーになる。  
   ~/ubuntu-virtinst# ./virtinst-stack01.sh  
   
   Starting install...   

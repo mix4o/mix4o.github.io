@@ -73,7 +73,5 @@ delay_parameters 300000/300000 # 100kB/s
 
 ```
 iptables -t nat -A PREROUTING -s 192.168.100.0/24 -p tcp --dport 80 -j REDIRECT --to-port 3128
-iptables -t nat -A PREROUTING -s 192.168.100.0/24 -p tcp --dport 443 -j REDIRECT --to-port 3128
 ```
 
- * 443(HTTPS)についてはプロキシを通したからといってキャッシュ効率がよくなるわけではないが、帯域制限の管理下にいれるために設定。

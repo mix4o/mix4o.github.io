@@ -46,8 +46,8 @@ title: Ubuntu14.04でOpenstack
  * とりあえずインストールは完了したが、これを2台以降もやる気はしないので、ネットワークの設定を修正する。
  ```
   <dns>  
-     <txt name="example" value="example">
-     <forwarder addr="8.8.8.8"/>
-     <forwarder addr="8.8.4.4"/>
-  </dns>  
+     <txt name="example" value="example">  
+     <forwarder addr="8.8.8.8"/>  
+     <forwarder addr="8.8.4.4"/>  
+  </dns>   
 ```
